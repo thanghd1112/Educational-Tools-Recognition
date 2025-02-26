@@ -6,36 +6,76 @@ This project focuses on the recognition and classification of educational tools 
 
 ## Main Responsibilities
 
-Collecting and labeling image data.
-Experimenting with image classification models (MLP, CNN, VGG16, ResNet50) and transfer learning (VGG16, ResNet50).
-Building an image segmentation model using the UNet architecture.
-Deploying models with Streamlit.
+- Collecting and labeling image data.
+- Experimenting with image classification models (MLP, CNN, VGG16, ResNet50) and transfer learning (VGG16, ResNet50).
+- Building an image segmentation model using the UNet architecture.
+- Deploying models with Streamlit.
 
 ## Recognition and Gains
 
-Acquired skills in image data collection, processing, and labeling.
-Gained a deeper understanding of MLP, CNN, VGG16, ResNet50, and UNet models.
-Applied techniques to improve model performance.
-Developed problem-solving and teamwork skills throughout the project.
+- Acquired skills in image data collection, processing, and labeling.
+- Gained a deeper understanding of MLP, CNN, VGG16, ResNet50, and UNet models.
+- Applied techniques to improve model performance.
+- Developed problem-solving and teamwork skills throughout the project.
 
+## Dataset Overview
 
-### HƯỚNG DẪN CÀI ĐẶT VÀ CÁC CHÚ Ý LIÊN QUAN ####
+### **1. `Data` Folder**
+The `Data` folder contains the primary dataset used for training, validation, and testing of the model. The images are organized into three subsets:
 
-1. Vì số lượng hình ảnh khá nhiều nên các file mô hình khi training trên google colab để vừa đủ tài nguyên và đã gộp lại thành 1 file code nên khi chạy chú ý chạy từng mô hình một.
+- **Train Set** (`Train`): 3,790 images across 5 classes.
+- **Validation Set** (`Valid`): 616 images across 5 classes.
+- **Test Set** (`Test`): 537 images across 5 classes.
 
-    -1.1. Các mô hình transfer learning có thể bị trùng tên với mô hình tự xây dựng cho nên vui lòng sau khi chạy xong các mô hình tự xây
-    dựng thì hãy reset kernel chạy lại từ đầu với data và mô hình transfer learning.
-    -1.2. File tổng hợp được chạy trên Jupyter Notebook trên nền tảng Anaconda. Vui lòng điều chỉnh cho phù hợp khi chuyển đổi môi trường
-    chạy.
-    
-2. Đối với streamlit để hỗ trợ xây dựng web thì cần đảm bảo như sau:
+Each of these subdirectories contains images categorized into five different classes:
+✅ **Eraser**  
+✅ **Pen**  
+✅ **Ruler**  
+✅ **Pencil Sharpener**  
+✅ **Scissors**
 
-    -2.1. Đảm bảo file xây dựng code web được lưu dưới dạng .py của python. (Như mình là Segmentation.py và Webapp.py trong đó: Segmentation.py là chứa
-    giao diện web của Segmenttation còn Webapp.py là classifi của các model huấn luyện khác.)
-    -2.2. Đảm bảo môi trường chạy phải cung cấp đầy đủ các thư viện liên quan đến mô hình và web.
-    -2.3. Mở terminal -> chuyển đến nơi lưu file code web bằng lệnh sau [cd "đường dẫn thư mục chứa file code"] ->sau đó nhập lệnh
-    [streamlit run 'tên file code.py'].
-    *Lưu ý: Phải đảm bảo môi trường đầy đủ các thư viện. Ví dụ ở đây mình sử dụng Anaconda với môi trường chạy là my_env nơi cài đặt đủ thư
-    viện cho nên ở bước terminal mình sẽ chạy thêm lệnh [conda activate my_env] để kích hoạt môi trường.
+This dataset is structured following a typical deep learning image classification format, where each class has its own subfolder.
 
-3. Đối với file code U-net Segmentation.ypnb thì dữ liệu train là file Data-2 với các file liên quan nằm trong đó.
+### **2. `Data-2` Folder**
+The `Data-2` folder appears to be an additional dataset variant, likely used for training the UNet segmentation model. Inside, there are three subdirectories:
+
+- **train** (Training images)
+- **valid** (Validation images)
+- **test** (Testing images)
+
+These sets are used specifically for segmentation tasks, complementing the classification dataset.
+
+### **Purpose of Each Dataset**
+- The `Data` folder is structured for **image classification**, where the goal is to categorize images into one of the five classes.
+- The `Data-2` folder is likely used for **image segmentation**, where models like UNet are trained to detect and outline objects in images.
+
+## Installation Guide and Important Notes
+
+### **Installation & Setup**
+1. Due to the large number of images, the trained model files were consolidated into a single script. Please ensure that each model is executed separately.
+    - **1.1.** Transfer learning models may have naming conflicts with custom-built models. Reset the kernel before switching between models.
+    - **1.2.** The consolidated script runs on Jupyter Notebook via Anaconda. Adjust accordingly if using a different environment.
+
+2. **Running Streamlit for Web Deployment:**
+    - **2.1.** Ensure the web application scripts are saved as `.py` files (e.g., `Segmentation.py` for segmentation and `Webapp.py` for classification models).
+    - **2.2.** The execution environment must have all necessary dependencies installed.
+    - **2.3.** To run Streamlit:
+      ```sh
+      cd "path_to_script_directory"
+      streamlit run Webapp.py
+      ```
+    - **Note:** If using Anaconda, activate the appropriate environment before running Streamlit:
+      ```sh
+      conda activate my_env
+      ```
+
+3. **For `U-net Segmentation.ipynb`**, the training dataset is located in the `Data-2` folder.
+
+## Demo Videos
+
+### 1. UNet Segmentation Demo on Google Colab
+[📹 Demo UNet Google Colab](DemoUnet_gg_Colab.mp4)
+
+### 2. Report & Build on Streamlit
+[📹 Report & Build on Streamlit](https://drive.google.com/file/d/1FDNyShu000GNPy8QmQ42AKjS2_Gahi8w/view?usp=drive_link)
+

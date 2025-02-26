@@ -74,7 +74,7 @@ These sets are used specifically for segmentation tasks, complementing the class
 ## Demo Videos
 
 ### 1. UNet Segmentation Demo on Google Colab
-[📹 Demo UNet Google Colab](DemoUnet_gg_Colab.mp4)
+[📹 Demo UNet Google Colab](https://drive.google.com/file/d/1Bg49sXd_Znj1TsngEQ7MbGM5toUfuEIl/view?usp=drive_link)
 
 ### 2. Report & Build on Streamlit
 [📹 Report & Build on Streamlit](https://drive.google.com/file/d/1FDNyShu000GNPy8QmQ42AKjS2_Gahi8w/view?usp=drive_link)
